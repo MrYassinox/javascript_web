@@ -1,4 +1,4 @@
-  var seconds;
+var seconds;
   var temp;
 function removem1() {
     var xkl = getQueryVariable("url");
@@ -17,6 +17,7 @@ function getQueryVariable(variable)
        }
        return(false);
 }
+
   function countdown() {
     seconds = document.getElementById('countdown').innerHTML;
     seconds = parseInt(seconds, 10);
@@ -29,6 +30,6 @@ function getQueryVariable(variable)
     seconds--;
     temp = document.getElementById('countdown');
     temp.innerHTML = seconds;
-    timeoutMyOswego = setTimeout(countdown, 500);
-  }
-setTimeout(function(){ countdown(); }, 10000);
+    timeoutMyOswego = setTimeout(countdown, 1500);
+  } 
+setTimeout(function(){ countdown(); }, 5000);
