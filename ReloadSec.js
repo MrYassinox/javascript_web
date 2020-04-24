@@ -20,7 +20,7 @@ function getQueryVariable(variable)
 
   function countdown() {
     seconds = document.getElementById('countdown').innerHTML;
-    seconds = parseInt(seconds, 6);
+    seconds = parseInt(seconds, 10);
 
     if (seconds == 0) {
       temp = document.getElementById('countdown');
@@ -30,6 +30,6 @@ function getQueryVariable(variable)
     seconds--;
     temp = document.getElementById('countdown');
     temp.innerHTML = seconds;
-    timeoutMyOswego = setTimeout(countdown, 1500);
+    timeoutMyOswego = setTimeout(countdown, 1000);
   } 
-setTimeout(function(){ countdown(); }, 5000);
+setTimeout(function(){ countdown(); }, 2000);
