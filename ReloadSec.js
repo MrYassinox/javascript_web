@@ -20,7 +20,7 @@ function getQueryVariable(variable)
 
   function countdown() {
     seconds = document.getElementById('countdown').innerHTML;
-    seconds = parseInt(seconds, 10);
+    seconds = parseInt(seconds, 6);
 
     if (seconds == 0) {
       temp = document.getElementById('countdown');
