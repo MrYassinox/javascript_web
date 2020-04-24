@@ -32,4 +32,4 @@ function getQueryVariable(variable)
     temp.innerHTML = seconds;
     timeoutMyOswego = setTimeout(countdown, 1000);
   } 
-setTimeout(function(){ countdown(); }, 2000);
+setTimeout(function(){ countdown(); }, 1000);
