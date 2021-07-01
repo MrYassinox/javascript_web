@@ -1,0 +1,32 @@
+ // Javascript Smart Popunder 02
+ 
+var totalURLWeight = 0,
+currentURL = 0,
+weighedURL = [],
+URLlist = [
+["https://cccamtv.org/?utm_source=google.com&utm_medium=Organic&utm_campaign=etc&utm_content=get%20cccam&utm_term=cccam%20free", 20],    // first column is URL, second column is the relative weight
+["https://cccamtv.org/?utm_source=google.com&utm_medium=Organic&utm_campaign=etc&utm_content=get%20cccam&utm_term=cccam", 50],   // since the total weight is 100, this will happen 70% of the time
+["https://cccamtv.org/?utm_source=google.com&utm_medium=Organic&utm_campaign=etc&utm_content=get%20cccam&utm_term=iptv", 10],
+["https://cccamtv.org/?utm_source=google.com&utm_medium=Organic&utm_campaign=etc&utm_content=get%20cccam&utm_term=mgcamd", 20]   // last element doesn't get a comma
+];
+ 
+for (var i = 0; i < URLlist.length; i++) {
+totalURLWeight += URLlist[i][1];
+}
+ 
+while (currentURL < URLlist.length){
+for (i = 0; i < URLlist[currentURL][1]; i++) {
+weighedURL[weighedURL.length] = URLlist[currentURL][0]
+}
+currentURL++
+}
+ 
+var pURL = weighedURL[Math.floor(Math.random() * weighedURL.length)];
+jsUnda(pURL, {
+width: 1100,         // Width of the popunder
+height: 850,         // Height of the popunder
+cap: 1,              // Number of times the popunder can happen in the time period
+//wait: (3600 * 72),   // Time period delimiting the cap | set to pop only once every 72 hours. | same (3600 seconds * 72 mins)
+wait: (60 * 1),   // Time period delimiting the cap | set to pop only once every 72 hours.
+cookie: "CookieName" // Name of the cookie, change this to force the popunders to happen
+});
